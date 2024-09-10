@@ -1,6 +1,14 @@
 import { RedisModule } from "./redis/redis.module";
 import { Module } from "@nestjs/common";
 import { UserModule } from "./user/user.module";
+import { MiningDeviceModule } from "./miningDevice/miningDevice.module";
+import { CurrencyModule } from "./currency/currency.module";
+import { GameModule } from "./game/game.module";
+import { TransactionModule } from "./transaction/transaction.module";
+import { RewardsModule } from "./rewards/rewards.module";
+import { UserStatsModule } from "./userStats/userStats.module";
+import { MiningSessionModule } from "./miningSession/miningSession.module";
+import { MiningSimulationModule } from "./miningsimulation/miningsimulation.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -19,6 +27,14 @@ import { AuthModule } from "./auth/auth.module";
     ACLModule,
     AuthModule,
     UserModule,
+    MiningDeviceModule,
+    CurrencyModule,
+    GameModule,
+    TransactionModule,
+    RewardsModule,
+    UserStatsModule,
+    MiningSessionModule,
+    MiningSimulationModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,

@@ -1,5 +1,5 @@
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DB_URL")
 }
 
@@ -11,10 +11,52 @@ model User {
   createdAt DateTime @default(now())
   email     String?  @unique
   firstName String?
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   lastName  String?
   password  String
   roles     Json
   updatedAt DateTime @updatedAt
   username  String   @unique
+}
+
+model MiningDevice {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
+}
+
+model Currency {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
+}
+
+model Game {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
+}
+
+model Transaction {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
+}
+
+model Rewards {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
+}
+
+model UserStats {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
+}
+
+model MiningSession {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
 }
